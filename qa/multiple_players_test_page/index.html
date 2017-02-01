@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="../icon.png">
+
+    <title>Ooyala Test Page - Player V4 Early Access</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="jquery.md5.min.js"></script>
+    <script src="jquery.zeroclipboard.min.js"></script>
+    <script src="query_string_params.js"></script>
+    <script src="time.js"></script>
+    <script src="index.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Ooyala Test Page - Player V4 Early Access</h2>
+        <p>Welcome! Check out our new player below. This page allows you to modify the player design and ad settings for Ooyala's latest HTML5 Player.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div id="video_container">
+            <div id="ooplayer" style="width:640px;height:480px"></div>
+          </div>
+          <div class="panel with-nav-tabs panel-primary">
+            <div class="panel-heading">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1default" data-toggle="tab">Required</a></li>
+                <li><a href="#tab2default" data-toggle="tab">Optional</a></li>
+              </ul>
+            </div>
+            <div class="panel-body">
+              <div class="tab-content">
+                <div class="tab-pane fade in active" id="tab1default">
+                  <div class="form-group">
+                    <label for="embed_code_input">Embed Code:</label>
+                    <input type="text" class="form-control" id="embed_code_input">
+                  </div>
+                  <div class="form-group">
+                    <label for="pbid_input">Player Branding ID:</label>
+                    <input type="text" class="form-control" id="pbid_input">
+                  </div>
+                  <div class="form-group">
+                    <label for="pcode_input">Provider Code</label>
+                    <input type="text" class="form-control" id="pcode_input">
+                  </div>
+                  <div class="form-group">
+                    <label for="core_player_input">Core Player</label>
+                    <input type="text" class="form-control" id="core_player_input">
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="tab2default">
+                  <div class="form-group">
+                    <label for="html5_skin_input">HTML5 Skin</label>
+                    <input type="text" class="form-control" id="html5_skin_input">
+                  </div>
+                  <div class="form-group">
+                    <label for="asset_input">Skin Asset</label>
+                    <input type="text" class="form-control" id="asset_input">
+                  </div>
+                  <div class="form-group">
+                    <label for="skin_config_input">Skin Config</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="skin_config_input">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default" onclick="resizeTextArea()"> <div id="caret-icon"><span class="caret"></span></div> </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control noresize" rows="1" placeholder="You can put inline skin config code here. (Optional. Must be valid JSON)" id="skin_inline_input"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="ads_input">Ad Plugins: (One per line)</label>
+                    <textarea class="form-control noresize" rows="8" placeholder="Put ad plugins here. One per line." id="ad_plugins_input"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="additional_plugins_input">Additional Plugins: (One per line)</label>
+                    <textarea class="form-control noresize" rows="8" placeholder="Put additional plugins here. One per line." id="additional_plugins_input"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="player_params_input">Player Configuration Parameters:</label>
+                    <textarea class="form-control noresize" rows="15" placeholder="You can put inline player configuration parameters here. (Must be valid JSON)" id="player_params_input"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5 col-md-offset-2">
+          <div id="video_container">
+            <div id="ooplayer2" style="width:640px;height:480px"></div>
+          </div>
+          <div class="form-group">
+            <label for="embed_code_input">Embed Code:</label>
+            <input type="text" class="form-control" id="embed_code_input2">
+          </div>
+          <div class="form-group">
+            <label for="pbid_input">Player Branding ID:</label>
+            <input type="text" class="form-control" id="pbid_input2">
+          </div>
+          <div class="form-group">
+            <label for="pcode_input">Provider Code</label>
+            <input type="text" class="form-control" id="pcode_input2">
+          </div>
+          <div class="form-group">
+            <label for="player_params_input">Player Configuration Parameters:</label>
+            <textarea class="form-control noresize" rows="15" placeholder="You can put inline player configuration parameters here. (Must be valid JSON)" id="player_params_input2"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button id="copy" type="button" onclick="showCopyPrompt()" class="btn btn-lg btn-block">Copy URL</button>
+        <button type="button" id="test_movie_button" onclick="testMovie()" class="btn btn-lg btn-success btn-block">Test Video</button>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>Ooyala Early Access</p>
+      </footer>
+    </div>
+  </body>
+</html>

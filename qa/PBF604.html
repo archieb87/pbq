@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="//player.ooyala.com/static/v4/candidate/latest/skin-plugin/html5-skin.min.css"/>
+</head>
+<body>
+<script src="//player.ooyala.com/static/v4/candidate/latest/core.min.js"></script>
+<!--<script src="//player.ooyala.com/static/v4/stable/latest/video-plugin/main_html5.min.js"></script>-->
+  <script src="//player.ooyala.com/static/v4/candidate/latest/skin-plugin/html5-skin.min.js"></script>
+<!--<script src="//player.ooyala.com/static/v4/stable/latest/video-plugin/bit_wrapper.min.js"></script>-->
+<script src="//player.ooyala.com/static/v4/candidate/latest/video-plugin/osmf_flash.min.js"></script>
+
+<script src="//player.ooyala.com/static/v4/candidate/latest/ad-plugin/google_ima.min.js"></script>
+<div style="max-width:1200px;margin:0px auto;">
+  <span style="float:left;border:5px solid red;">Video 1:<div id='container' style='width:580px;'></div></span>
+  <span style="float:right;border:5px solid green;">Video 2:<div id='container2' style='width:580px;'></div></span>
+</div>
+  <script>
+    var playerParam = {'pcode':'dseGIyOo4xvzZFFu2AMwh7NtrwAk','playerBrandingId':'abafee0167b14ca48d8738b994f5d2d4','skin': {'config': '//player.ooyala.com/static/v4/candidate/latest/skin-plugin/skin.json'} };
+    var playerParam2 = {'pcode':'dseGIyOo4xvzZFFu2AMwh7NtrwAk','playerBrandingId':'abafee0167b14ca48d8738b994f5d2d4','skin': {'config': '//player.ooyala.com/static/v4/candidate/latest/skin-plugin/skin.json'} };
+//    var playerParam = {'pcode':'d0aDkyOsSlXXy_I6D8zswFKq9-3U','playerBrandingId':'abafee0167b14ca48d8738b994f5d2d4','skin': {'config': '//player.ooyala.com/static/v4/stable/latest/skin-plugin/skin.json'} };
+//    var playerParam2 = {'pcode':'d0aDkyOsSlXXy_I6D8zswFKq9-3U','playerBrandingId':'abafee0167b14ca48d8738b994f5d2d4','skin': {'config': '//player.ooyala.com/static/v4/stable/latest/skin-plugin/skin.json'} };
+    OO.ready(function() {
+      window.pp = OO.Player.create('container', 'YyeGVmMDE6GxMJOnof3QMuRX0sEwwe6F', playerParam);
+      window.pp2 = OO.Player.create('container2', 'I2eGVmMDE6S2TG0jsa7NNE3thejf21i3', playerParam2);
+    //  window.pp = OO.Player.create('container', 's0cXV2dTogGMjR5LKQu2NQwUyIT9LnUC', playerParam);
+    //  window.pp2 = OO.Player.create('container2', 's0cXV2dTogGMjR5LKQu2NQwUyIT9LnUC', playerParam2);
+    
+    }); </script>
+</body>
+</html>
